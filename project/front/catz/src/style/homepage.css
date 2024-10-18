@@ -1,0 +1,89 @@
+.homepage{
+    background-color: #fff;
+    height: 90vh;
+    border-radius: 1rem;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+    width: 718px;
+    position: relative;
+}
+
+.homepage__img__container{
+    width: 100%;
+}
+.homepage_img{
+    width: 100%;
+    height: 100%;
+}
+
+
+.homepage__body{
+    padding: 10px 50px;
+}
+.homepage__title{
+    color: #5B4F6A;
+    font-size: 2rem;
+    margin-bottom: 5px;
+}
+.homepage__rules{
+    font-size: 0.9rem;
+    color: #7B5B92;
+}
+
+.homepage__btns{
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px 0 20px;
+}
+
+.homepage__btn{
+    width: 180px;
+    padding: 12px;
+    border: none;
+    border-radius: 2rem;
+    font-weight: 600;
+    font-size: 1rem;
+    
+}
+.loading{
+    margin-top: 40px;
+}
+.light__btn{
+    background-color: #FFEAE2;
+    color: #5B4F6A;
+    transition: all 0.2s ease; 
+}
+
+.biege__btn{
+    background-color: #FEDACB;
+    color: #5B4F6A;
+    transition: all 0.2s ease; 
+}
+
+.dark__btn{
+    background-color: #B5B1BB;
+    color: #fff;
+    transition: all 0.2s ease; 
+}
+
+.header__btn:hover {
+    transform: scale(1.05); 
+    transition: all 0.2s ease; 
+}
+
+.light__btn:hover {
+    background-color: #FFD1D1; 
+    color: #4A3A4D; 
+}
+
+
+
+.biege__btn:hover {
+    background-color: #F1BBA2; 
+    color: #4A3A4D; 
+}
+
+
+.dark__btn:hover {
+    background-color: #9B95A9; 
+    color: #EAEAEA; 
+}
