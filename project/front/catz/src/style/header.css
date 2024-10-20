@@ -34,3 +34,10 @@
     border-bottom: 2px solid #5B4F6A;
 
 }
+
+.header__nav__active{
+    font-weight: 800;
+    border-bottom: 2px solid #5B4F6A;
+    color: #A37EAD;
+    cursor: default;
+}

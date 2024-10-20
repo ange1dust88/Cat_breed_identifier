@@ -5,6 +5,7 @@
     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
     width: 718px;
     position: relative;
+    overflow-y: scroll;
 }
 
 .learnmore__content{
@@ -52,5 +53,12 @@
     object-fit: cover;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
+    transition: all 0.3s;
+}
+
+.breed__image:hover{
+    scale: 1.05;
+    rotate: 1deg;
+}
+
   

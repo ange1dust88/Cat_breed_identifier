@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import '../style/learnmore.css';
 import Header from './Header';
+import {motion} from 'framer-motion';
 
 function LearnMore() {
   const { breed } = useParams(); 
@@ -32,6 +33,7 @@ function LearnMore() {
           });
 
           setBreedImages(imagesResponse.data.map((img: any) => img.url)); 
+          console.log('set  img ');
         } else {
           setError('Breed information not found.');
         }
@@ -44,7 +46,13 @@ function LearnMore() {
   }, [breed]);
 
   return (
-    <div className='learnmore'>
+    <motion.div 
+      className='learnmore'
+      initial={{ x: '-100vw' }}  
+      animate={{ x: 0 }}        
+      exit={{ x: '100vw' }}      
+      transition={{ duration: 0.4}}
+    >
       <Header />
       <div className='learnmore__content'>
         {error && <p className="error">{error}</p>}
@@ -74,7 +82,7 @@ function LearnMore() {
           !error && <p>Loading breed information...</p>
         )}
       </div>
-    </div>
+    </motion.div>
   );
 }
 

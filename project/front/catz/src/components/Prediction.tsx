@@ -4,12 +4,13 @@ import axios from 'axios';
 import '../style/prediction.css';
 import Header from './Header';
 import { Link } from 'react-router-dom';
+import {motion} from 'framer-motion';
 
 function Prediction() {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const [prediction, setPrediction] = useState<{ class: string; confidence: number } | null>(null);
   const [error, setError] = useState<string | null>(null);
-  const [loading, setLoading] = useState<boolean>(false); // New loading state
+  const [loading, setLoading] = useState<boolean>(false); 
 
   const onDrop = (acceptedFiles: File[]) => {
     const file = acceptedFiles[0];
@@ -27,7 +28,7 @@ function Prediction() {
     const formData = new FormData();
     formData.append('file', file);
     
-    setLoading(true); // Start loading when prediction begins
+    setLoading(true); 
 
     try {
       const response = await axios.post('http://localhost:8080/predict', formData, {
@@ -52,7 +53,12 @@ function Prediction() {
   });
 
   return (
-    <div className='prediction'>
+    <motion.div 
+      className='prediction'
+      initial={{ x: '-100vw' }}  
+      animate={{ x: 0 }}        
+      exit={{ x: '100vw' }}      
+      transition={{ duration: 0.4}}>
       <Header />
       <div {...getRootProps({ className: 'prediction__dropzone' })}>
         <input {...getInputProps()} />
@@ -90,7 +96,7 @@ function Prediction() {
 
       
       {error && <p className="error">{error}</p>}
-    </div>
+    </motion.div>
   );
 }
 
