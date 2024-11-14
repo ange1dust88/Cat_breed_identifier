@@ -11,6 +11,7 @@ function Prediction() {
   const [prediction, setPrediction] = useState<{ class: string; confidence: number } | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState<boolean>(false); 
+  const API_URL = 'http://localhost:8080/predict';
 
   const onDrop = (acceptedFiles: File[]) => {
     const file = acceptedFiles[0];
@@ -31,7 +32,7 @@ function Prediction() {
     setLoading(true); 
 
     try {
-      const response = await axios.post('http://localhost:8080/predict', formData, {
+      const response = await axios.post(API_URL, formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
@@ -55,10 +56,10 @@ function Prediction() {
   return (
     <motion.div 
       className='prediction'
-      initial={{ x: '-100vw' }}  
-      animate={{ x: 0 }}        
-      exit={{ x: '100vw' }}      
-      transition={{ duration: 0.4}}>
+      initial={{ y: '-100vh' }}  
+      animate={{ y: 0 }}        
+      exit={{ y: '100vh' }}      
+      transition={{ duration: 0.2}}>
       <Header />
       <div {...getRootProps({ className: 'prediction__dropzone' })}>
         <input {...getInputProps()} />

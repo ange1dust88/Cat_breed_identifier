@@ -1,21 +1,31 @@
 .homepage{
     background-color: #fff;
-    height: 90vh;
+    height: var(--container_height);
     border-radius: 1rem;
     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
-    width: 718px;
+    width: var(--container_width);
     position: relative;
     overflow-y: scroll;
 }
 
-.homepage__img__container{
+.homepage__img__container {
+    position: relative;
     width: 100%;
-}
-.homepage_img{
-    width: 100%;
-    height: 100%;
+    max-width: var(--container_width);
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
+.homepage_img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+}
 
 .homepage__body{
     padding: 10px 50px;
@@ -33,9 +43,8 @@
 .homepage__btns{
     display: flex;
     justify-content: center;
-    padding: 40px 20px 0 20px;
+    padding: 20px 20px 0 20px;
 }
-
 .homepage__btn{
     width: 180px;
     padding: 12px;
@@ -43,27 +52,18 @@
     border-radius: 2rem;
     font-weight: 600;
     font-size: 1rem;
+    background-color: var(--button_color);
+    color: #fff;
+    transition: all 0.2s ease; 
+    
+}
+
+.homepage__btn:hover {
+    background-color: var(--button_hover_color); 
     
 }
 .loading{
     margin-top: 40px;
-}
-.light__btn{
-    background-color: #FFEAE2;
-    color: #5B4F6A;
-    transition: all 0.2s ease; 
-}
-
-.biege__btn{
-    background-color: #FEDACB;
-    color: #5B4F6A;
-    transition: all 0.2s ease; 
-}
-
-.dark__btn{
-    background-color: #B5B1BB;
-    color: #fff;
-    transition: all 0.2s ease; 
 }
 
 .header__btn:hover {
@@ -71,20 +71,28 @@
     transition: all 0.2s ease; 
 }
 
-.light__btn:hover {
-    background-color: #FFD1D1; 
-    color: #4A3A4D; 
+@media (max-width: 718px) { 
+    .homepage{
+        width: 100vw;
+        height: 100vh;
+        border-radius: 0;
+    }
+}
+
+@media (max-width: 435px) { 
+    .homepage__title{
+        font-size: 1.5rem;
+        margin-bottom: 3px;
+    }
+    .homepage__btns{
+        padding: 10px 20px 0 20px;
+    }
 }
 
 
+@media (max-width: 350px) { 
+    .homepage__rules{
+        font-size:0.7rem;
 
-.biege__btn:hover {
-    background-color: #F1BBA2; 
-    color: #4A3A4D; 
-}
-
-
-.dark__btn:hover {
-    background-color: #9B95A9; 
-    color: #EAEAEA; 
+    }
 }

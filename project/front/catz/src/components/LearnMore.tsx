@@ -48,10 +48,10 @@ function LearnMore() {
   return (
     <motion.div 
       className='learnmore'
-      initial={{ x: '-100vw' }}  
-      animate={{ x: 0 }}        
-      exit={{ x: '100vw' }}      
-      transition={{ duration: 0.4}}
+      initial={{ y: '-100vh' }}  
+      animate={{ y: 0 }}        
+      exit={{ y: '100vh' }}      
+      transition={{ duration: 0.2}}
     >
       <Header />
       <div className='learnmore__content'>

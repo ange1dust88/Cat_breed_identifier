@@ -1,10 +1,26 @@
+:root{
+    --button_color: rgba(233, 152, 165, 1);
+    --button_hover_color: rgb(241, 118, 138);
+    --container_width: 718px;
+    --container_height: 90vh;
+}
+
 .app{
-    background-color: #FEDACB;
+    
     height: 100vh;
     max-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-      
+
+
+
+
+    background: linear-gradient(217deg, rgba(245, 208, 138, 0.8), rgba(255,0,0,0) 70.71%),
+            linear-gradient(127deg, rgba(241, 92, 65, 0.8), rgba(0,255,0,0) 70.71%),
+            linear-gradient(336deg, rgba(233, 152, 165, 0.8), rgba(0,0,255,0) 70.71%);
+  
 }
+
+/*   #FEDACB */
