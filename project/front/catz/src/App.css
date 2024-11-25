@@ -2,7 +2,8 @@
     --button_color: rgba(233, 152, 165, 1);
     --button_hover_color: rgb(241, 118, 138);
     --container_width: 718px;
-    --container_height: 90vh;
+    --container_height: 90svh ;
+    --header_width: 75px;
 }
 
 .app{

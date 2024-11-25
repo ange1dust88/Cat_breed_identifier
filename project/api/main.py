@@ -21,7 +21,7 @@ app.add_middleware(
     allow_headers=["*"],  
 )
 
-MODEL = tf.keras.models.load_model("../models/2.keras")
+MODEL = tf.keras.models.load_model("2.keras")
 
 CLASS_NAMES = [
     "Abyssinian", "Bengal", "Birman", "Bombay", 

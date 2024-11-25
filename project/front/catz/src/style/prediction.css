@@ -10,6 +10,7 @@
     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
     width: var(--container_width);
     overflow-y: scroll;
+    overflow-x: hidden;
 }
 .prediction__dropzone {
     margin-top: 20px;

@@ -2,12 +2,14 @@
     background-color: #FFEEE6;
     border-top-right-radius: 1rem;
     border-top-left-radius: 1rem;
+    height: var(--header_width);
     display: flex;
     justify-content: space-between;
     width: 100%;
     align-items: center;
     padding: 15px 20px;
     top: 0;
+    overflow-x: hidden;
 }
 
 .header__logo{
@@ -22,7 +24,9 @@
     color: #5B4F6A;
     font-size: 1rem;
 }
-
+.header__mobile{
+    display: none;
+}
 .header__nav {
     transition: color 0.2s ease, border-bottom 0.2s ease, transform 0.2s ease; 
     cursor: pointer;
@@ -40,4 +44,96 @@
     border-bottom: 2px solid #5B4F6A;
     color: #A37EAD;
     cursor: default;
+}
+
+
+.hum_btn .line{
+    transition: 0.5s;
+    transform-origin: center;
+}
+.hum_btn:hover{
+    cursor: pointer;
+}
+
+.hum_btn[aria-expanded = "true"] :is(.top, .bot){
+    y: 45;
+}
+.hum_btn .top{
+    transition: rotate  translateY 0.6s ease,
+    y 0.6s ease;
+}
+.hum_btn .bot{
+    transition: rotate translateY 0.6s ease 0.2s,
+    y 0.6s ease 0.2s;
+}
+.hum_btn[aria-expanded = "true"] .top{
+    transform: rotate(45deg) translateY(24px);
+
+}
+
+.hum_btn[aria-expanded = "true"] .bot{
+    transform: rotate(-45deg) translateY(-24px);
+}
+.hum_btn[aria-expanded = "true"] .mid{
+    opacity: 0;
+}
+.hum_btn {
+    background-color: transparent;
+    border: none;
+    fill: #5B4F6A;
+    z-index: 11;
+    display: none;
+}
+
+
+
+
+@media (max-width: 718px) { 
+    .header__mobile{
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 10;
+        height: 100svh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center; 
+        width: 100%;
+        text-align: center;
+        background-color: #FFEEE6;
+        opacity: 0;
+        transform: translateX(+100%);
+        transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+    
+    .header__mobile.open{
+        opacity: 1;
+        transform: translateX(0); 
+    }
+    .header__mobile-nav{
+        font-size: 2em;
+        color: #5B4F6A;
+        z-index: 12;
+    }
+
+    .header__mobile-nav--active{
+        font-size: 2em;
+        color: #A37EAD;
+        z-index: 12;
+    }
+
+    .header__mobile-nav:hover{
+        color: #A37EAD;
+    }
+
+    .header__nav{
+        display: none;
+    }
+    .header__nav__active{
+        display: none;
+    }
+    .hum_btn{
+        display: inline;
+    }
 }
